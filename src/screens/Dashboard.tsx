@@ -66,7 +66,6 @@ export default function Dashboard() {
                 <VendorPerformance />
                 <div>
                     <h1 className="text-2xl font-bold mb-4">Billing and Invoices</h1>
-                    {/* Billing and Invoices code component */}
                     <Billing/>
                 </div>
                 <div>

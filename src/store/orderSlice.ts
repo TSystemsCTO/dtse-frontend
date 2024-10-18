@@ -19,13 +19,25 @@ export interface ShippingInfo {
   paymentStatus: string;
   paymentStatusColor: string;
 }
+export interface OrderHistoryInfo {
+  step1: string;
+  step2: string;
+  step3: string;
+  step4: string;
+  step5: string;
+  step6: string;
+  orderStatus: string;
+  orderStatusColor: string;
+}
 
 export interface Order {
   orderInfo: OrderInfo;
   shippingInfo: ShippingInfo;
+  orderHistoryInfo: OrderHistoryInfo; 
   labels: {
     order: string[];
     shipping: string[];
+    history: string[];
   };
 }
 

@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const vendors = [
-  { name: 'Bayka', city: 'Munich', rating: 5 },
-  { name: 'Telegärtner', city: 'Munich', rating: 5 },
-  { name: 'Teleglas GmbH', city: 'Munich', rating: 5 },
-  { name: 'Gcabling Electronic', city: 'Munich', rating: 4 },
-];
+interface VendorInfo {
+  name: string;
+  city: string;
+  rating: number;
+}
 
 export default function VendorPerformance() {
+  const [vendors, setVendors] = useState<VendorInfo[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/data/vendorDetails.json');
+        const data = await response.json();
+        setVendors(data.vendors);
+      } catch (error) {
+        console.error('Error fetching vendor data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const renderStars = (rating: number) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {

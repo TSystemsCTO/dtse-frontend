@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Order, setSelectedOrder, showOrderDetailsScreen } from '@/store/orderSlice';
-import { procurementData } from '@/data';
 
 export default function Procurement() {
   const dispatch = useDispatch();
+  const [orderData, setOrderData] = useState<Order[]>([]);
+
+  useEffect(() => {
+    const fetchOrderData = async () => {
+      const response = await fetch('/data/orderDetails.json');
+      const data = await response.json();
+      setOrderData(data.orders);
+    };
+
+    fetchOrderData();
+  }, []);
 
   const formatDate = (dateString: string) => {
     const [datePart] = dateString.split(' at ');
@@ -19,7 +29,7 @@ export default function Procurement() {
   const handleViewOrderDetails = (order: Order) => {
     dispatch(setSelectedOrder(order));
     dispatch(showOrderDetailsScreen(true));
-  }
+  };
 
   return (
     <div className="py-6 w-full">
@@ -54,7 +64,7 @@ export default function Procurement() {
               </tr>
             </thead>
             <tbody>
-              {procurementData.map((data, idx) => (
+              {orderData.map((data, idx) => (
                 <React.Fragment key={idx}>
                   <tr>
                     <td colSpan={4}>
@@ -72,10 +82,10 @@ export default function Procurement() {
                       {formatDate(data.orderInfo.date)}
                     </td>
                     <td className="w-[157px] text-right p-4 text-[13.34px] leading-[20.96px] font-bold">
-                      {data.orderInfo.amount}
+                      {data.orderInfo.cost}
                     </td>
                     <td className="w-[110px] flex justify-center p-4">
-                      <img src="/images/icons/CaretRight.png" alt="caret right" className='w-4 h-4' />
+                      <img src="/images/icons/CaretRight.png" alt="caret right" className="w-4 h-4" />
                     </td>
                   </tr>
                 </React.Fragment>

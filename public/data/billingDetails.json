@@ -1,0 +1,25 @@
+{
+  "billingData": [
+    {
+      "title": "Claim Settlement",
+      "percentageChange": "10%",
+      "amount": "859.985,51 €",
+      "icon": "/images/icons/arrowUp.png",
+      "bgColor": "#FF4FA7"
+    },
+    {
+      "title": "Amount Paid",
+      "percentageChange": "6%",
+      "amount": "237.124,34 €",
+      "icon": "/images/icons/arrowDown.png",
+      "bgColor": "#FF4FA7"
+    },
+    {
+      "title": "Upcoming Payments",
+      "percentageChange": "10 New",
+      "amount": "421.104,29 €",
+      "icon": null,
+      "bgColor": "#083830"
+    }
+  ]
+}

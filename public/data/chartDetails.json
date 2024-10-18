@@ -1,0 +1,8 @@
+{
+    "chartData": [
+        { "id": "Delivered", "name": "", "count": 400, "fill": "#4CAF50" },
+        { "id": "Work In Progress", "name": "", "count": 700, "fill": "#FFA726" },
+        { "id": "Delayed", "name": "", "count": 200, "fill": "#F44336" },
+        { "id": "Issue Raised", "name": "", "count": 300, "fill": "#42A5F5" }
+    ]
+}

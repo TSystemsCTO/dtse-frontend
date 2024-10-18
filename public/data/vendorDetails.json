@@ -1,0 +1,24 @@
+{
+    "vendors": [
+        {
+            "name": "Bayka",
+            "city": "Berlin",
+            "rating": 5
+        },
+        {
+            "name": "Telegärtner",
+            "city": "Hamburg",
+            "rating": 5
+        },
+        {
+            "name": "Teleglas GmbH",
+            "city": "Frankfurt",
+            "rating": 4
+        },
+        {
+            "name": "Gcabling Electronic",
+            "city": "Stuttgart",
+            "rating": 3
+        }
+    ]
+}
